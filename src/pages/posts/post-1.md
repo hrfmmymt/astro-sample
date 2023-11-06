@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: '私の最初のブログ記事'
 pubDate: 2022-07-01
 description: 'これは私の新しいAstroブログの最初の記事です。'
@@ -8,10 +9,6 @@ image:
     alt: 'Astroのロゴ。'
 tags: ["astro", "ブログ", "公開学習"]
 ---
-# 私の最初のブログ記事
-
-投稿日: 2022-07-01
-
 Astroの学習についての私の _新しいブログ_ へようこそ！ここでは、新しいウェブサイトを作りながら、私の学習過程を共有します。
 
 ## 達成したこと
