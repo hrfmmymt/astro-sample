@@ -3,6 +3,11 @@ html {
   font-family: sans-serif;
 }
 
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
+}
+
 body {
   margin: 0 auto;
   width: 100%;
@@ -18,6 +23,10 @@ body {
 h1 {
   margin: 1rem 0;
   font-size: 2.5rem;
+}
+
+.dark .nav-links a {
+  color: #fff;
 }
 
 /* ナビゲーションのスタイル */
