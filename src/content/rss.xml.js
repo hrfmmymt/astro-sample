@@ -1,12 +1,13 @@
-import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
+import rss, { pagesGlobToRssItems } from '@astrojs/rss';
+import { getCollection } from 'astro:content';
 
 export async function GET() {
   const posts = await getCollection('posts');
+
   return rss({
     title: 'Astro学習者 | ブログ',
     description: 'Astroを学ぶ旅',
-    site: 'https://tiny-belekoy-1ca787.netlify.app',
+    site: 'https://my-blog-site.netlify.app',
     items: posts.map((post) => ({
       title: post.data.title,
       pubDate: post.data.pubDate,

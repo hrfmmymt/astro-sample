@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "about";
+
+const identity = {
+  firstName: "サラ",
+  country: "カナダ",
+  occupation: "技術ライター",
+  hobbies: ["写真", "バードウォッチング", "野球"],
+};
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "ドキュメントの執筆"];
+
+const happy = true;
+const finished = true;
+const goal = 3;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+	<ul>
+		<li>{identity.firstName}</li>
+		<li>{identity.country}</li>
+		<li>{identity.occupation}</li>
+		{identity.hobbies.length >= 2 &&
+			<li>
+				{identity.hobbies[0]}と{identity.hobbies[1]}
+			</li>
+		}
+	</ul>
+	<ul>
+		{skills.map((skill) => <li class="skill">{skill}</li>)}
+	</ul>
+	{happy && <p>I am happy to be learning Astro! Astroを学べて幸せです！</p>}
+
+	{finished && <p>I finished this tutorial! このチュートリアルを終えました！</p>}
+
+	{goal === 3 ? <p>My goal is to finish in 3 days. 3日で終えるのが目標です。</p> : <p>My goal is not 3 days. 3日が目標ではありません。</p>}
+</BaseLayout>
