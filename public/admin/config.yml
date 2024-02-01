@@ -21,17 +21,38 @@ collections:
     format: frontmatter
     preview_path: post/{{slug}}
     fields:
-      - { name: title, label: Title }
-      - { name: description, label: Description }
-      - { name: pubDate, label: Date, widget: date }
-      - { name: author, label: Author }
-      - { name: image, label: Image, widget: "image", choose_url: true }
-      - { name: tags, label: Tags, widget: "list" }
-      - {
-          label: "Publish",
-          name: "isPublish",
-          widget: "boolean",
-          default: true,
-        }
-      - { label: "Draft", name: "isDraft", widget: "boolean", default: false }
-      - { name: body, label: Body, widget: markdown }
+      - name: title
+        label: Title
+      - name: description
+        label: Description
+      - name: pubDate
+        label: Date
+        widget: date
+      - name: author
+        label: Author
+      - name: image
+        label: Image
+        widget: object
+        fields:
+          - name: url
+            label: Source
+            widget: image
+            choose_url: true
+          - name: alt
+            label: Alt Text
+            widget: string
+            default: "image"
+      - name: tags
+        label: Tags
+        widget: list
+      - name: isPublish
+        label: Publish
+        widget: boolean
+        default: true
+      - name: isDraft
+        label: Draft
+        widget: boolean
+        default: false
+      - name: body
+        label: Body
+        widget: markdown

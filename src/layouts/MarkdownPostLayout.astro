@@ -1,8 +1,10 @@
 ---
-import BaseLayout from './BaseLayout.astro';
+import BaseLayout from "./BaseLayout.astro";
 
 const { frontmatter } = Astro.props;
+const tags = frontmatter.tags.split(/[ ,]+/);
 ---
+
 <BaseLayout pageTitle={frontmatter.title}>
   <p>{frontmatter.pubDate.toDateString()}</p>
   <p><em>{frontmatter.description}</em></p>
@@ -12,9 +14,13 @@ const { frontmatter } = Astro.props;
   <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 
   <div class="tags">
-    {frontmatter.tags.map((tag: string) => (
-      <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
+    {
+      tags.map((tag: string) => (
+        <p class="tag">
+          <a href={`/tags/${tag}`}>{tag}</a>
+        </p>
+      ))
+    }
   </div>
 
   <slot />
@@ -33,9 +39,9 @@ const { frontmatter } = Astro.props;
   .tag {
     margin: 0.25em;
     border: dotted 1px #a1a1a1;
-    border-radius: .5em;
-    padding: .5em 1em;
+    border-radius: 0.5em;
+    padding: 0.5em 1em;
     font-size: 1.15em;
-    background-color: #F8FCFD;
+    background-color: #f8fcfd;
   }
 </style>
