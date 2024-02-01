@@ -1,3 +1,6 @@
+locale: "ja"
+local_backend: true
+
 backend:
   name: github
   repo: hrfmmymt/astro-sample
@@ -23,7 +26,12 @@ collections:
       - { name: pubDate, label: Date, widget: date }
       - { name: author, label: Author }
       - { name: image, label: Image, widget: "image", choose_url: true }
-      - { name: tags, label: Tags }
-      - { label: "Publish", name: "isPublish", widget: "boolean", default: true }
+      - { name: tags, label: Tags, widget: "list" }
+      - {
+          label: "Publish",
+          name: "isPublish",
+          widget: "boolean",
+          default: true,
+        }
       - { label: "Draft", name: "isDraft", widget: "boolean", default: false }
       - { name: body, label: Body, widget: markdown }
