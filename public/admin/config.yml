@@ -45,6 +45,7 @@ collections:
       - name: tags
         label: Tags
         widget: list
+        hint: this is hint text
       - name: isPublish
         label: Publish
         widget: boolean
